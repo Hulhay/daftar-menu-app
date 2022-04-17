@@ -12,3 +12,18 @@ export const getAllProducts = async (req, res) => {
 	}	
 
 }
+
+export const createProduct = async (req, res) => {
+	
+	try {
+		await Product.create(req.body);
+		res.json({
+			"message": "Product created"
+		});
+	} catch (error) {
+		res.json({
+			message: error.message
+		});
+	}	
+
+}

@@ -11,6 +11,8 @@ try {
 	console.log("Connection Error:", error);
 }
 
+app.use(express.json());
 app.use('/products' ,productRoutes);
+
 
 app.listen(5000, () => console.log("server running at port 5000"));
